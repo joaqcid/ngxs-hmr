@@ -13,6 +13,13 @@ import { Observable } from 'rxjs';
   ],
   imports: [
     BrowserModule,
+    // Uncomment to repro error
+    //
+    // "Error: The selector "app-root" did not match any elements"
+    //
+    // i think that ngModule.destroy is executed before createNewHosts 
+    // app-root is not in DOM when angular tries to bootstrap after hot reload
+    // 
     // NgxsModule.forRoot([TestState])
   ],
   providers: [],
